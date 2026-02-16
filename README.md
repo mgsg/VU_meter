@@ -8,7 +8,7 @@ Compile using:
 
 ```s
 mkdir build-rp2350
-cmake -DPICO_BOARD=pico2 ../src
+cmake -DPICO_BOARD=pico2 -DPICO_SDK_PATH=[project path]../src
 make
 ```
 

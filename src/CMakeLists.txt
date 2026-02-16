@@ -1,21 +1,5 @@
-cmake_minimum_required(VERSION 3.12)
+project(vu_meter)
 
-# Default SDK path to submodule location if not set via environment
-if (NOT PICO_SDK_PATH AND NOT DEFINED ENV{PICO_SDK_PATH})
-    set(PICO_SDK_PATH ${CMAKE_CURRENT_LIST_DIR}/../pico-sdk)
-endif()
-
-# Pull in PICO SDK (must be before project)
-include(../pico_sdk_import.cmake)
-
-# Set the project name and specify the target
-project(vu_meter C CXX ASM)
-
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_CXX_STANDARD 17)
-
-# Initialize the Pico SDK
-pico_sdk_init()
 
 add_executable(vu_meter
     vu_meter.c
@@ -61,7 +45,7 @@ target_compile_definitions(vu_meter PRIVATE
 )
 
 # # Specify the source file you want to copy
-set(TARGET_UF2_FILE "${CMAKE_CURRENT_LIST_DIR}/../build-rp2350/vu_meter.uf2")
+set(TARGET_UF2_FILE "${CMAKE_CURRENT_LIST_DIR}/../build-rp2350/src/vu_meter.uf2")
 
 # # Copy uf2 file to root folder
 add_custom_command(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD
