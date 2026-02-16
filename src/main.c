@@ -9,7 +9,7 @@
 #include "hardware/i2c.h"
 #include "hardware/gpio.h"
 
-#include "config.h"
+#include "vu_config.h"
 #include "utils.h"
 #include "i2c_driver.h"
 #include "images.h"

@@ -1,7 +1,7 @@
 #ifndef OLED_H_STUB
 #define OLED_H_STUB
 
-#include "config.h"
+#include "vu_config.h"
 
 #if OLED_DRIVER == OLED_DRIVER_SSD1305
 #include "oled_ssd1305.h"

@@ -1,5 +1,5 @@
 #include "i2c_driver.h"
-#include "config.h"
+#include "vu_config.h"
 
 #if I2C_DRIVER == I2C_DRIVER_SYNC
 #include "i2c_sync.c"

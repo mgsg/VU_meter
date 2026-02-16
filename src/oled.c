@@ -1,4 +1,4 @@
-#include "config.h"
+#include "vu_config.h"
 #include "oled.h"
 #include "utils.h"
 

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "config.h"
+#include "vu_config.h"
 #include "i2c_driver.h"
 
 // PICO

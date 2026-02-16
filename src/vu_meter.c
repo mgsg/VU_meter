@@ -4,7 +4,7 @@
 #include <math.h>
 #include <time.h>
 
-#include "config.h"
+#include "vu_config.h"
 #include "vu_meter.h"
 
 void vu_meter_init(vu_meter_t *meter,
