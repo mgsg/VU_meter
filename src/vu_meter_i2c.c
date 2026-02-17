@@ -5,9 +5,9 @@
 #include <time.h>
 
 #include "vu_config.h"
-#include "vu_meter.h"
+#include "vu_meter_i2c.h"
 
-void vu_meter_init(vu_meter_t *meter,
+void vu_meter_i2c_init(vu_meter_i2c_t *meter,
               int8_t address,
               // calibration_data_t *calibration_eeprom,
               bool flipped,
@@ -51,7 +51,7 @@ void vu_meter_init(vu_meter_t *meter,
 }
 
 
-void vu_meter_update(vu_meter_t *meter, uint16_t needle_level, uint16_t peak_level)
+void vu_meter_i2c_update(vu_meter_i2c_t *meter, uint16_t needle_level, uint16_t peak_level)
 {
   #if INCLUDE_CALIBRATION
     calibration_run(
@@ -93,7 +93,7 @@ void vu_meter_update(vu_meter_t *meter, uint16_t needle_level, uint16_t peak_lev
 }
 
 
-void vu_meter_splash(vu_meter_t *meter, const uint8_t *image)
+void vu_meter_i2c_splash(vu_meter_i2c_t *meter, const uint8_t *image)
 {
   const uint8_t *background_tmp = meter->background.data;
   uint8_t sprites_n = meter->display.sprites_n;

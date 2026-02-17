@@ -1,5 +1,5 @@
-#ifndef CONFIG_H
-#define CONFIG_H
+#ifndef VU_CONFIG_H
+#define VU_CONFIG_H
 
 /* Constants -- do not modify */
 
@@ -84,4 +84,4 @@
 #define DISPLAY_RIGHT_SPLASH IMG_NONE
 #define DISPLAY_RIGHT_WATERMARK IMG_WATERMARK
 
-#endif /* CONFIG_H */
+#endif /* VU_CONFIG_H */

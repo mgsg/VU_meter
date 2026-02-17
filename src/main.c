@@ -14,13 +14,13 @@
 #include "i2c_driver.h"
 #include "images.h"
 #include "oled.h"
-#include "vu_meter.h"
+#include "vu_meter_i2c.h"
 
 // calibration_data_t CALIBRATION_LEFT EEFIXED = CALIBRATION_INITIALIZER;
 // calibration_data_t CALIBRATION_RIGHT EEFIXED = CALIBRATION_INITIALIZER;
 
-vu_meter_t VU_METER_L;
-vu_meter_t VU_METER_R;
+vu_meter_i2c_t VU_METER_L;
+vu_meter_i2c_t VU_METER_R;
 
 int main(void)
 {
@@ -37,7 +37,7 @@ int main(void)
   // LED setup
   gpio_init(25); gpio_set_dir(25, GPIO_OUT);
 
-  vu_meter_init(
+  vu_meter_i2c_init(
     &VU_METER_L,
     DISPLAY_LEFT_ADDRESS,
     // &CALIBRATION_LEFT,
@@ -46,7 +46,7 @@ int main(void)
     DISPLAY_LEFT_PEAK_INDICATOR, 
     DISPLAY_LEFT_WATERMARK);
 
-//   vu_meter_init(
+//   vu_meter_i2c_init(
 //     &VU_METER_R,
 //     DISPLAY_RIGHT_ADDRESS,
 //     // &CALIBRATION_RIGHT,
@@ -56,8 +56,8 @@ int main(void)
 //     DISPLAY_RIGHT_WATERMARK);
  
   #if ENABLE_SPLASH_SCREEN
-    vu_meter_splash(&VU_METER_L, DISPLAY_LEFT_SPLASH);
-    //vu_meter_splash(&VU_METER_R, DISPLAY_RIGHT_SPLASH);
+    vu_meter_i2c_splash(&VU_METER_L, DISPLAY_LEFT_SPLASH);
+    //vu_meter_i2c_splash(&VU_METER_R, DISPLAY_RIGHT_SPLASH);
 
     oled_set_display_on(&(VU_METER_L.display.device), true);
     //oled_set_display_on(&(VU_METER_R.display.device), true);
@@ -93,8 +93,8 @@ int main(void)
     //   adc_reset_peak(false, false);
     // }
 
-    vu_meter_update(&VU_METER_L, l_needle, l_peak);
-    //vu_meter_update(&VU_METER_R, adc_data.r_needle, adc_data.r_peak);
+    vu_meter_i2c_update(&VU_METER_L, l_needle, l_peak);
+    //vu_meter_i2c_update(&VU_METER_R, adc_data.r_needle, adc_data.r_peak);
 
     if (!is_on && i > BLANK_TIME_FRAMES) {
       oled_set_display_on(&(VU_METER_L.display.device), true);
